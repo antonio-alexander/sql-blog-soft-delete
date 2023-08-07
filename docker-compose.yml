@@ -10,9 +10,9 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: mysql
-      MYSQL_DATABASE: mysql
+      MYSQL_DATABASE: sql_blog_soft_delete
       MYSQL_USER: mysql
       MYSQL_PASSWORD: mysql
     volumes:
-      - ./cmd/sql/001_employees.sql:/docker-entrypoint-initdb.d/001_employees.sql
-      - ./cmd/sql/002_employee_groups.sql:/docker-entrypoint-initdb.d/002_employee_groups.sql
+      - ./sql/001_employee.sql:/docker-entrypoint-initdb.d/001_employee.sql
+      - ./sql/002_employee_group.sql:/docker-entrypoint-initdb.d/002_employee_group.sql
